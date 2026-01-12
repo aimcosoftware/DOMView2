@@ -27,3 +27,8 @@ The default method to distribute your licence is include `DOMView2.licence` with
 The licence will need to be recreated if you update DOMView2 or make any changes to the assembly details of your application.
 
 **Your user key should be kept secure and not distributed with your application**.
+
+### Contacts
+[Purchasing](https://domview2.aimcosoftware.co.uk/info)
+
+[Documentation](https://domview2.aimcosoftware.co.uk/docs)
