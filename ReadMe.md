@@ -29,6 +29,6 @@ The licence will need to be recreated if you update DOMView2 or make any changes
 **Your user key should be kept secure and not distributed with your application**.
 
 ### Contacts
-[Purchasing](https://domview2.aimcosoftware.co.uk/info)
+[Purchasing](https://domview2.aimcosoftware.co.uk/info#pricing)
 
 [Documentation](https://domview2.aimcosoftware.co.uk/docs)
