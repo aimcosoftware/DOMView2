@@ -5,16 +5,14 @@ DOMView2 is a wrapper around [Microsoft's WebView2 browser](https://github.com/M
 
 ```vb
 'Strongly typed classes
-Private Div As DVDiv
-Private Dlg As DVDialog
 Private WithEvents Btn As DVButton
 
 'Insert dialog into the current page
 Private Sub InsertDialog()
-	Dlg = DomView.document.createElement("dialog")
+	Dim Dlg As DVDialog = DomView.document.createElement("dialog")
 	Dlg.style.cssText = "box-shadow:5px 5px 10px grey;width:400px;border:1px solid silver;border-radius:10px;padding:10px"
 
-	Div = DomView.document.createElement("div")
+	Dim Div As DVDiv = DomView.document.createElement("div")
 	Div.style.cssText = "text-align:center;padding:20px"
 	Div.innerText = "Dialog inserted from .Net"
 	Dlg.insertAdjacentElement("afterBegin", Div)
