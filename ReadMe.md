@@ -39,13 +39,13 @@ End Sub
 ### Debugging
 As debugging pauses all threads, you can't make calls to WebView2 when stopped on a breakpoint, nor examine properties from Visual Studio. To debug calls to WebView2, assign calls to a variable before the breakpoint. e.g.
 
-### Versioning
-DOMView2 uses the same major version number as the version of Edge that it supports. Minor is used when an important fix or update is required to the major release. Build is the month and day of release, and private is incremented on each release.
-
 ```vb
 Dim iText = WebView.document.getElementById("element-id").innerText
 ' Break on this line to examine innerText
 ```
+
+### Versioning
+DOMView2 uses the same major version number as the version of Edge that it supports. Minor is used when an important fix or update is required to the major release. Build is the month and day of release, and private is incremented on each release.
 
 ### Distribution
 For the evergreen distribution, all the files in the `DOMView2` folder need to be in your application folder and distributed with your application. For a fixed version distribution, you can specify the executuable folder in the `DOMView2.ExecutableFolder` property. [See here](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) for details of WebView2 distribution models.
