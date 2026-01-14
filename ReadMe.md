@@ -1,12 +1,46 @@
 # DOMView2 Overview
 
 DOMView2 is a wrapper around [Microsoft's WebView2 browser](https://github.com/MicrosoftEdge/WebView2Browser) that gives full synchronous access to the DOM and other objects in the browser.
+#### Access DOM and other APIs synchronously from .Net.
 
-### Versioning
-DOMView2 uses the same major version number as the version of Edge that it supports. Minor is used when an important fix or update is required to the major release. Build is the month and day of release, and private is incremented on each release.
+```vb
+'Strongly typed classes
+Private Div As DVDiv
+Private Dlg As DVDialog
+Private WithEvents Btn As DVButton
+
+'Insert dialog into the current page
+Private Sub InsertDialog()
+	Dlg = DomView.document.createElement("dialog")
+	Dlg.style.cssText = "box-shadow:5px 5px 10px grey;width:400px;border:1px solid silver;border-radius:10px;padding:10px"
+
+	Div = DomView.document.createElement("div")
+	Div.style.cssText = "text-align:center;padding:20px"
+	Div.innerText = "Dialog inserted from .Net"
+	Dlg.insertAdjacentElement("afterBegin", Div)
+
+	Btn = DomView.document.createElement("button")
+	Btn.style.cssText = "border:1px solid silver;border-radius:5px;padding:10px 20px;float:right"
+	Btn.innerText = "Close"
+	Dlg.insertAdjacentElement("beforeEnd", Btn)
+
+	DomView.document.body.insertAdjacentElement("beforeEnd", Dlg)
+	Dlg.showModal()
+End Sub
+
+'Button click event
+Private Sub Btn_AfterEvent(Sender As DVWindow, e As DVAfterEventArgs) Handles Btn.AfterEvent
+	If e.type = "click" Then
+		Dlg.close()
+	End If
+End Sub
+```
 
 ### Debugging
 As debugging pauses all threads, you can't make calls to WebView2 when stopped on a breakpoint, nor examine properties from Visual Studio. To debug calls to WebView2, assign calls to a variable before the breakpoint. e.g.
+
+### Versioning
+DOMView2 uses the same major version number as the version of Edge that it supports. Minor is used when an important fix or update is required to the major release. Build is the month and day of release, and private is incremented on each release.
 
 ```vb
 Dim iText = WebView.document.getElementById("element-id").innerText
@@ -28,7 +62,5 @@ The licence will need to be recreated if you update DOMView2 or make any changes
 
 **Your user key should be kept secure and not distributed with your application**.
 
-### Contacts
-[Purchasing](https://domview2.aimcosoftware.co.uk/info#pricing)
-
-[Documentation](https://domview2.aimcosoftware.co.uk/docs)
+### Other information
+[Purchasing](https://domview2.aimcosoftware.co.uk/info#pricing), [Documentation](https://domview2.aimcosoftware.co.uk/docs)
