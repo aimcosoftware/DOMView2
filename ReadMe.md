@@ -48,8 +48,8 @@ DOMView2 uses the same major version number as the version of Edge that it suppo
 ### Distribution
 For the evergreen distribution, all the files in the `DOMView2` folder need to be in your application folder and distributed with your application. For a fixed version distribution, you can specify the executuable folder in the `DOMView2.ExecutableFolder` property. [See here](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution) for details of WebView2 distribution models.
 
-### Environment
-DOMView2 is built as an AnyCPU Winforms control. To use in a 32bit environment, rename `WebView2Loader 32.dll` to  `WebView2Loader.dll` and distribute that with your application.
+### 32bit Environment
+DOMView2 is built as an AnyCPU Winforms control. To use in a 32bit environment, use `WebView2Loader.dll` from the `32 bit loader` folder and distribute that with your application.
 
 ### Licence
 DOMView2 will display an unlicensed banner below the browser. To unlock DOMView2, **shift click** the banner, enter your app key and click **Create Licence**. This will create `DOMView2.licence` in the current app folder.
